@@ -1,10 +1,16 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import "./Login.css";
+import { useNavigate } from "react-router-dom";
+import "./Signup.css";
+function SignupPage() {
+  const navigate = useNavigate();
 
-function LoginPage() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  };
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -16,58 +22,75 @@ function LoginPage() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Perform login logic here
+    // Perform signup logic here
+    console.log("Name:", name);
     console.log("Email:", email);
     console.log("Password:", password);
     // Reset the form
+    setName("");
     setEmail("");
     setPassword("");
+    // Navigate to the login page
+    navigate("/");
   };
 
   return (
-    <div className="login-container">
-      <h1 className="login-heading">Login</h1>
-      <form className="login-form" onSubmit={handleSubmit}>
-        <label className="login-label">
+    <div className="signup-container">
+      <h1 className="signup-heading">Signup</h1>
+      <form className="signup-form" onSubmit={handleSubmit}>
+        <label className="signup-label">
+          Name:
+          <input
+            type="text"
+            value={name}
+            onChange={handleNameChange}
+            className="signup-input"
+          />
+        </label>
+        <br />
+        <label className="signup-label">
           Email:
           <input
             type="email"
             value={email}
             onChange={handleEmailChange}
-            className="login-input"
+            className="signup-input"
           />
         </label>
         <br />
-        <label className="login-label">
+        <label className="signup-label">
           Password:
           <input
             type="password"
             value={password}
             onChange={handlePasswordChange}
-            className="login-input"
+            className="signup-input"
           />
         </label>
         <br />
-        <button type="submit" className="login-button">
-          Login
+        <button type="submit" className="signup-button">
+          Signup
         </button>
       </form>
-
-      <p className="signup-link">
-        Don't have an account? <Link to="/signup">Sign up</Link>
-      </p>
     </div>
   );
 }
 
-export default LoginPage;
+export default SignupPage;
 
 // import React, { useState } from "react";
-// import { Link } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
-// function LoginPage() {
+// function SignupPage() {
+//   const navigate = useNavigate();
+
+//   const [name, setName] = useState("");
 //   const [email, setEmail] = useState("");
 //   const [password, setPassword] = useState("");
+
+//   const handleNameChange = (event) => {
+//     setName(event.target.value);
+//   };
 
 //   const handleEmailChange = (event) => {
 //     setEmail(event.target.value);
@@ -79,18 +102,27 @@ export default LoginPage;
 
 //   const handleSubmit = (event) => {
 //     event.preventDefault();
-//     // Perform login logic here
+//     // Perform signup logic here
+//     console.log("Name:", name);
 //     console.log("Email:", email);
 //     console.log("Password:", password);
 //     // Reset the form
+//     setName("");
 //     setEmail("");
 //     setPassword("");
+//     // Navigate to the login page
+//     navigate("/");
 //   };
 
 //   return (
 //     <div>
-//       <h1>Login</h1>
+//       <h1>Signup</h1>
 //       <form onSubmit={handleSubmit}>
+//         <label>
+//           Name:
+//           <input type="text" value={name} onChange={handleNameChange} />
+//         </label>
+//         <br />
 //         <label>
 //           Email:
 //           <input type="email" value={email} onChange={handleEmailChange} />
@@ -105,14 +137,10 @@ export default LoginPage;
 //           />
 //         </label>
 //         <br />
-//         <button type="submit">Login</button>
+//         <button type="submit">Signup</button>
 //       </form>
-
-//       <p>
-//         Don't have an account? <Link to="/signup">Sign up</Link>
-//       </p>
 //     </div>
 //   );
 // }
 
-// export default LoginPage;
+// export default SignupPage;

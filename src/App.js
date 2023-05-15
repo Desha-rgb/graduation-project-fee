@@ -1,64 +1,69 @@
 import "./App.css";
-// import { useState } from "react";
+import React from "react";
+
+// import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import NavigationBar from "./Components/Navigation";
+import LoginPage from "./Pages/Login";
+import SignupPage from "./Pages/Signup";
 import Update from "./Pages/Update";
+import HomePage from "./Pages/HeroSection.js/Home";
+import StatusPage from "./Pages/Status";
+import Temperature from "./Pages/Temperature";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <NavigationBar />,
+    children: [
+      {
+        index: true,
+        element: <HomePage />,
+      },
+      {
+        path: "update",
+        element: <Update />,
+      },
+      {
+        path: "login",
+        element: <LoginPage />,
+      },
+      {
+        path: "signup",
+        element: <SignupPage />,
+      },
+      {
+        path: "status",
+        element: <StatusPage />,
+      },
+      {
+        path: "temperature",
+        element: <Temperature />,
+      },
+    ],
+  },
+]);
 
 function App() {
   return (
     <div className="App">
-      <NavigationBar />
-      <Update />
+      <RouterProvider router={router} />
+      {/* <NavigationBar />
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/update" element={<Update />} />
+          <Route path="/signup" element={<SignupPage />} />
+        </Routes>
+      </Router> */}
+
+      {/* <Update />
       <br />
-      <br />
+      <br /> */}
     </div>
   );
 }
 
 export default App;
-
-// import React, { useState } from "react";
-// import { storage } from "./firebase";
-// import { ref, uploadBytesResumable } from "firebase/storage";
-
-// // import firebase from "firebase/app";
-// // import "firebase/database";
-
-// function App() {
-//   const [fileContents, setFileContents] = useState("");
-
-//   const handleSubmit = (event) => {
-//     event.preventDefault();
-
-//     const file = event.target.files[0];
-//     console.log(file);
-
-//     const reader = new FileReader();
-//     reader.readAsText(file);
-//     reader.onload = () => {
-//       setFileContents(reader.result);
-//     };
-//     const storageRef = ref(storage, `files/${file.name}`);
-//     uploadBytesResumable(storageRef, file).set(fileContents);
-//   };
-
-//   // const handleSubmit = () => {
-
-//   //   firebase.database().ref("files/file1").set(fileContents);
-//   // };
-
-//   return (
-//     <div>
-//       <form onSubmit={handleSubmit}>
-//         <input type="file" /> <br />
-//         <br />
-//         <button type="submit">Upload</button>
-//         <br />
-//       </form>
-//       {/* <input type="file" onChange={handleFileUpload} /> */}
-//       {/* <button onClick={handleSubmit}>Submit</button> */}
-//     </div>
-//   );
-// }
-
-// export default App;
