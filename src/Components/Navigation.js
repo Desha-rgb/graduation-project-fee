@@ -19,7 +19,7 @@ function NavigationBar() {
             <NavLink to="/update">Update</NavLink>
           </li>
           <li>
-            <NavLink to="/temperature">Temperature</NavLink>
+            <NavLink to="/features">Features</NavLink>
           </li>
           <li>
             <NavLink to="/status">Status</NavLink>

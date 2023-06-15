@@ -1,0 +1,73 @@
+.volume-player-heading {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.volume-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.audio-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mute-button,
+.play-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.mute-button.muted {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.play-button.playing {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+.file-input-container {
+  margin-bottom: 1rem;
+}
+
+.file-input-label {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.file-input {
+  display: none;
+}
+
+.audio-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.audio-name {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.audio-player {
+  width: 100%;
+}

@@ -10,7 +10,7 @@ import SignupPage from "./Pages/Signup";
 import Update from "./Pages/Update";
 import HomePage from "./Pages/HeroSection.js/Home";
 import StatusPage from "./Pages/Status";
-import Temperature from "./Pages/Temperature";
+import Features from "./Pages/Features";
 
 const router = createBrowserRouter([
   {
@@ -38,8 +38,8 @@ const router = createBrowserRouter([
         element: <StatusPage />,
       },
       {
-        path: "temperature",
-        element: <Temperature />,
+        path: "features",
+        element: <Features />,
       },
     ],
   },
