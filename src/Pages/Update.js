@@ -5,7 +5,7 @@ import Form from "../Components/Form";
 import "./Update.css";
 
 function Update() {
-  const [versionNumber, setVersionNumber] = useState("");
+  const [versionNumber, setVersionNumber] = useState(0);
   const [selectedECU, setSelectedECU] = useState("");
 
   const handleECUChange = (event) => {
@@ -18,14 +18,19 @@ function Update() {
 
   const handleUpdate = () => {
     const db = getDatabase();
-    set(ref(db, `Node${selectedECU}`), {
-      [`Node${selectedECU}_Version`]: versionNumber,
-    });
-
-    const nodeDb = getDatabase();
-    set(ref(nodeDb, "Selected_Node"), {
+    set(ref(db, "test"), {
+      [`Node1_Version`]: selectedECU === 1 ? versionNumber : 0,
+      [`Node2_Version`]: selectedECU === 2 ? versionNumber : 0,
+      [`Node3_Version`]: selectedECU === 3 ? versionNumber : 0,
+      [`Node4_Version`]: selectedECU === 4 ? versionNumber : 0,
+      // [`Node${selectedECU}_Version`]: versionNumber,
       Selected_Node: selectedECU,
     });
+
+    // const nodeDb = getDatabase();
+    // set(ref(nodeDb, "Selected_Node"), {
+    //   Selected_Node: selectedECU,
+    // });
   };
 
   return (
