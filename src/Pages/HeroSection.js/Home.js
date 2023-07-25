@@ -9,6 +9,11 @@ function Home() {
         padding: "60px 0",
         textAlign: "center",
         color: "#333333",
+        // backgroundImage: "url('./home-image.jpg')",
+        backgroundSize: "100% 100%",
+        // backgroundPosition: "100% 100%",
+        height: "100vh",
+        width: "100vw",
       }}
     >
       <div
@@ -29,6 +34,7 @@ function Home() {
             style={{
               flex: 1,
               textAlign: "left",
+              marginTop: "30px",
             }}
           >
             <h1

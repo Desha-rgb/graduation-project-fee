@@ -34,33 +34,35 @@ function Update() {
   };
 
   return (
-    <div className="update-container">
-      <h1 className="update-heading">Update your car features</h1>
-      <label className="update-label">Select target node:</label>
-      <select
-        value={selectedECU}
-        onChange={handleECUChange}
-        className="update-select"
-      >
-        <option value="">--Please choose an option--</option>
-        <option value="1">ECU1</option>
-        <option value="2">ECU2</option>
-        <option value="3">ECU3</option>
-      </select>
-      <br />
-      <br />
-      <label className="update-label">Version number:</label>
-      <input
-        type="number"
-        placeholder="Enter version number"
-        value={versionNumber}
-        onChange={handleVersionChange}
-        className="update-input"
-      />
-      <button onClick={handleUpdate} className="update-button">
-        Update
-      </button>
-      <Form />
+    <div className="update-main">
+      <div className="update-container">
+        <h1 className="update-heading">Update your car features</h1>
+        <label className="update-label">Select target node:</label>
+        <select
+          value={selectedECU}
+          onChange={handleECUChange}
+          className="update-select"
+        >
+          <option value="">--Please choose an option--</option>
+          <option value="1">ECU1</option>
+          <option value="2">ECU2</option>
+          <option value="3">ECU3</option>
+        </select>
+        <br />
+        <br />
+        <label className="update-label">Version number:</label>
+        <input
+          type="number"
+          placeholder="Enter version number"
+          value={versionNumber}
+          onChange={handleVersionChange}
+          className="update-input"
+        />
+        <button onClick={handleUpdate} className="update-button">
+          Update
+        </button>
+        <Form />
+      </div>
     </div>
   );
 }

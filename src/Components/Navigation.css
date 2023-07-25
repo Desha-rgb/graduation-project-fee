@@ -1,12 +1,15 @@
-nav {
-  background-color: #337ab7;
-}
+/* .nav-main {
+  background-image: url(./home-image.jpg);
+  background-size: 100% 100%;
+  height: 100vh;
+} */
 
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
+  background-color: #337ab7;
 }
 
 li {
@@ -22,5 +25,5 @@ li a {
 }
 
 li a:hover {
-  background-color: #111;
+  background-color: #888;
 }

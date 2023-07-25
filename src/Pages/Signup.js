@@ -35,43 +35,45 @@ function SignupPage() {
   };
 
   return (
-    <div className="signup-container">
-      <h1 className="signup-heading">Signup</h1>
-      <form className="signup-form" onSubmit={handleSubmit}>
-        <label className="signup-label">
-          Name:
-          <input
-            type="text"
-            value={name}
-            onChange={handleNameChange}
-            className="signup-input"
-          />
-        </label>
-        <br />
-        <label className="signup-label">
-          Email:
-          <input
-            type="email"
-            value={email}
-            onChange={handleEmailChange}
-            className="signup-input"
-          />
-        </label>
-        <br />
-        <label className="signup-label">
-          Password:
-          <input
-            type="password"
-            value={password}
-            onChange={handlePasswordChange}
-            className="signup-input"
-          />
-        </label>
-        <br />
-        <button type="submit" className="signup-button">
-          Signup
-        </button>
-      </form>
+    <div className="signup-main">
+      <div className="signup-container">
+        <h1 className="signup-heading">Signup</h1>
+        <form className="signup-form" onSubmit={handleSubmit}>
+          <label className="signup-label">
+            Name:
+            <input
+              type="text"
+              value={name}
+              onChange={handleNameChange}
+              className="signup-input"
+            />
+          </label>
+          <br />
+          <label className="signup-label">
+            Email:
+            <input
+              type="email"
+              value={email}
+              onChange={handleEmailChange}
+              className="signup-input"
+            />
+          </label>
+          <br />
+          <label className="signup-label">
+            Password:
+            <input
+              type="password"
+              value={password}
+              onChange={handlePasswordChange}
+              className="signup-input"
+            />
+          </label>
+          <br />
+          <button type="submit" className="signup-button">
+            Signup
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

@@ -2,12 +2,12 @@
   padding: 60px 0;
   text-align: center;
   color: #333333;
-}
 
-.section-hero .container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 20px;
+  .section-hero .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
 }
 
 .section-hero .hero__content {

@@ -25,37 +25,39 @@ function LoginPage() {
   };
 
   return (
-    <div className="login-container">
-      <h1 className="login-heading">Login</h1>
-      <form className="login-form" onSubmit={handleSubmit}>
-        <label className="login-label">
-          Email:
-          <input
-            type="email"
-            value={email}
-            onChange={handleEmailChange}
-            className="login-input"
-          />
-        </label>
-        <br />
-        <label className="login-label">
-          Password:
-          <input
-            type="password"
-            value={password}
-            onChange={handlePasswordChange}
-            className="login-input"
-          />
-        </label>
-        <br />
-        <button type="submit" className="login-button">
-          Login
-        </button>
-      </form>
+    <div className="login-section">
+      <div className="login-container">
+        <h1 className="login-heading">Login</h1>
+        <form className="login-form" onSubmit={handleSubmit}>
+          <label className="login-label">
+            Email:
+            <input
+              type="email"
+              value={email}
+              onChange={handleEmailChange}
+              className="login-input"
+            />
+          </label>
+          <br />
+          <label className="login-label">
+            Password:
+            <input
+              type="password"
+              value={password}
+              onChange={handlePasswordChange}
+              className="login-input"
+            />
+          </label>
+          <br />
+          <button type="submit" className="login-button">
+            Login
+          </button>
+        </form>
 
-      <p className="signup-link">
-        Don't have an account? <Link to="/signup">Sign up</Link>
-      </p>
+        <p className="signup-link">
+          Don't have an account? <Link to="/signup">Sign up</Link>
+        </p>
+      </div>
     </div>
   );
 }

@@ -4,7 +4,7 @@ import "./Navigation.css";
 
 function NavigationBar() {
   return (
-    <>
+    <div className="nav-main">
       <nav>
         <ul>
           <li>
@@ -27,7 +27,7 @@ function NavigationBar() {
         </ul>
       </nav>
       <Outlet />
-    </>
+    </div>
   );
 }
 
